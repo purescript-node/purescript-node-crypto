@@ -1,0 +1,14 @@
+import * as crypto from "node:crypto";
+export const newImpl = (algorithm, key, iv) => crypto.createCipheriv(algorithm, key, iv);
+export const newOptsImpl = (algorithm, key, iv, options) => crypto.createCipheriv(algorithm, key, iv, options);
+export const finalBufImpl = (cipher) => cipher.final();
+export const finalStrImpl = (cipher, encoding) => cipher.final(encoding);
+export const getAuthTagImpl = (cipher) => cipher.getAuthTag();
+export const setAADImpl = (cipher, buffer) => cipher.setAAD(buffer);
+export const setAADOptsImpl = (cipher, buffer, opts) => cipher.setAAD(buffer, opts);
+export const setAutoPaddingImpl = (cipher) => cipher.setAutoPadding();
+export const setAutoPaddingBoolImpl = (cipher, autoPadding) => cipher.setAutoPadding(autoPadding);
+export const updateBufBufImpl = (cipher, buf) => cipher.update(buf);
+export const updateBufStrImpl = (cipher, buf, outEncoding) => cipher.update(buf, outEncoding);
+export const updateStrBufImpl = (cipher, str, inputEncoding) => cipher.update(str, inputEncoding);
+export const updateStrStrImpl = (cipher, str, inputEncoding, outputEncoding) => cipher.update(str, inputEncoding, outputEncoding);

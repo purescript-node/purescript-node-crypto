@@ -1,0 +1,15 @@
+import * as crypto from "node:crypto";
+export const newImpl = (algorithm, key, iv) => crypto.createDecipheriv(algorithm, key, iv);
+export const newOptsImpl = (algorithm, key, iv, options) => crypto.createDecipheriv(algorithm, key, iv, options);
+export const finalBufImpl = (decipher) => decipher.final();
+export const finalStrImpl = (decipher, encoding) => decipher.final(encoding);
+export const setAuthTagBufImpl = (decipher, buf) => decipher.getAuthTag(buf);
+export const setAuthTagStrImpl = (decipher, str, encoding) => decipher.getAuthTag(str, encoding);
+export const setAADImpl = (decipher, buffer) => decipher.setAAD(buffer);
+export const setAADOptsImpl = (decipher, buffer, opts) => decipher.setAAD(buffer, opts);
+export const setAutoPaddingImpl = (decipher) => decipher.setAutoPadding();
+export const setAutoPaddingBoolImpl = (decipher, autoPadding) => decipher.setAutoPadding(autoPadding);
+export const updateBufBufImpl = (decipher, buf) => decipher.update(buf);
+export const updateBufStrImpl = (decipher, buf, outEncoding) => decipher.update(buf, outEncoding);
+export const updateStrBufImpl = (decipher, str, inputEncoding) => decipher.update(str, inputEncoding);
+export const updateStrStrImpl = (decipher, str, inputEncoding, outputEncoding) => decipher.update(str, inputEncoding, outputEncoding);
