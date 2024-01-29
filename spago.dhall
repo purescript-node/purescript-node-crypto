@@ -3,6 +3,7 @@
   [ "effect"
   , "either"
   , "exceptions"
+  , "foreign"
   , "maybe"
   , "node-buffer"
   , "node-streams"
